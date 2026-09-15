@@ -1,0 +1,60 @@
+<section class="hero">
+    <h2>Welcome to Yuppie Store</h2>
+    <p>Everything you need, all in one place.</p>
+</section>
+
+<section class="products">
+
+    <div class="product">
+        <div class="product-image">🎧</div>
+        <h3>Wireless Headphones</h3>
+        <p>Premium wireless headphones.</p>
+        <div class="price">$99</div>
+        <button onclick="addToCart('Wireless Headphones', 99)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <div class="product-image">👟</div>
+        <h3>Running Shoes</h3>
+        <p>Comfortable shoes for everyday running.</p>
+        <div class="price">$129</div>
+        <button onclick="addToCart('Running Shoes', 129)">
+            Add to Cart
+        </button>
+    </div>
+
+    <div class="product">
+        <div class="product-image">⌚</div>
+        <h3>Smart Watch</h3>
+        <p>Track your activity and stay connected.</p>
+        <div class="price">$159</div>
+        <button onclick="addToCart('Smart Watch', 159)">
+            Add to Cart
+        </button>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Yuppie Store</p>
+</footer>
+
+<script>
+
+    let cartCount = 0;
+
+    function addToCart(productName, price) {
+
+        cartCount++;
+
+        document.getElementById("cart-count").textContent = cartCount;
+
+        alert(productName + " added to cart!");
+    }
+
+</script>
+
+</body>
+</html>
