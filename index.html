@@ -129,7 +129,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>Wireless Headphones</h3>
         <p>Premium wireless headphones.</p>
         <div class="price">$99</div>
-
+<button onclick="viewItem('Wireless Headphones', 99)">
+        View Product
+    </button>
         <button onclick="addToCart('Wireless Headphones', 99)">
             Add to Cart
         </button>
@@ -140,7 +142,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>Running Shoes</h3>
         <p>Comfortable shoes for everyday running.</p>
         <div class="price">$129</div>
-
+<button onclick="viewItem('Running Shoes', 129)">
+    View Product
+</button>
         <button onclick="addToCart('Running Shoes', 129)">
             Add to Cart
         </button>
@@ -151,7 +155,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h3>Smart Watch</h3>
         <p>Track your activity and stay connected.</p>
         <div class="price">$159</div>
-
+<button onclick="viewItem('Smart Watch', 159)">
+    View Product
+</button>
         <button onclick="addToCart('Smart Watch', 159)">
             Add to Cart
         </button>
@@ -166,7 +172,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
 
     let cartCount = 0;
+function viewItem(productName, price) {
 
+    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer.push({
+        event: "view_item",
+        ecommerce: {
+            currency: "AUD",
+            value: price,
+            items: [
+                {
+                    item_name: productName,
+                    price: price,
+                    quantity: 1
+                }
+            ]
+        }
+    });
+
+    alert(productName + " viewed!");
+}
 function addToCart(productName, price) {
 
     cartCount = cartCount + 1;
