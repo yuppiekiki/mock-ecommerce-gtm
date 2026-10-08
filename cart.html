@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yuppie Store - Cart</title>
+
+    <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T77HBJWQ');</script>
+    <!-- 把你原来的 GTM 第一段代码放这里 -->
+    <!-- End Google Tag Manager -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+        }
+
+        header a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .cart-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .total {
+            text-align: right;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 30px;
+        }
+
+        button {
+            background: #222;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T77HBJWQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header>
+    <h1>Yuppie Store</h1>
+    <a href="index.html">← Continue Shopping</a>
+</header>
+
+<div class="cart-container">
+
+    <h2>Your Cart</h2>
+
+    <div class="cart-item">
+        <div>
+            <strong>Wireless Headphones</strong>
+            <p>Quantity: 1</p>
+        </div>
+
+        <div>$99</div>
+    </div>
+
+    <div class="total">
+        Total: $99
+    </div>
+
+    <button onclick="beginCheckout()">
+        Checkout
+    </button>
+
+</div>
+
+<script>
+
+function beginCheckout() {
+
+    window.dataLayer = window.dataLayer || [];
+
+    window.dataLayer.push({
+        event: "begin_checkout",
+        ecommerce: {
+            currency: "AUD",
+            value: 99,
+            items: [
+                {
+                    item_name: "Wireless Headphones",
+                    price: 99,
+                    quantity: 1
+                }
+            ]
+        }
+    });
+
+    alert("Checkout started!");
+}
+
+</script>
