@@ -70,6 +70,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body>
+<script>
+
+window.dataLayer = window.dataLayer || [];
+
+window.dataLayer.push({
+    event: "view_cart",
+    ecommerce: {
+        currency: "AUD",
+        value: 99,
+        items: [
+            {
+                item_name: "Wireless Headphones",
+                price: 99,
+                quantity: 1
+            }
+        ]
+    }
+});
+
+</script>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T77HBJWQ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
